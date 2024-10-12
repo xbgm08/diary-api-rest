@@ -10,6 +10,8 @@ import java.time.LocalDate;
 public class DiaryEntry {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Getter
+    @Setter
     private Long id;
 
     @Getter
@@ -28,4 +30,9 @@ public class DiaryEntry {
     @Getter
     @Setter
     private Mood mood;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @Getter
+    @Setter
+    private Diary diary;
 }

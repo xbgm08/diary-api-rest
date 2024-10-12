@@ -15,9 +15,4 @@ public class User {
     @Getter
     @Setter
     private String name;
-
-    @OneToOne(cascade = CascadeType.ALL)
-    @Getter
-    @Setter
-    private Diary diary;
 }

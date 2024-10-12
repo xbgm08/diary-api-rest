@@ -5,7 +5,6 @@ import com.me.diary.domain.repository.MoodRepository;
 import com.me.diary.service.MoodService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-
 import java.util.List;
 import java.util.NoSuchElementException;
 

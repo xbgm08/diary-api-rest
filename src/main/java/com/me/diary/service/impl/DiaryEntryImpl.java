@@ -1,25 +1,16 @@
 package com.me.diary.service.impl;
 
-import com.me.diary.domain.model.Diary;
 import com.me.diary.domain.model.DiaryEntry;
 import com.me.diary.domain.repository.DiaryEntryRepository;
-import com.me.diary.domain.repository.DiaryRepository;
 import com.me.diary.service.DiaryEntryService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-
-import java.util.List;
 import java.util.NoSuchElementException;
 
 @Service
 @RequiredArgsConstructor
 public class DiaryEntryImpl implements DiaryEntryService {
-
-    private DiaryEntryRepository diaryEntryRepository;
-
-    public DiaryEntryImpl(DiaryEntryRepository diaryEntryRepository, DiaryRepository diaryRepository) {
-        this.diaryEntryRepository = diaryEntryRepository;
-    }
+    private final DiaryEntryRepository diaryEntryRepository;
 
     public DiaryEntry addEntry(DiaryEntry diaryEntry) {
         return diaryEntryRepository.save(diaryEntry);

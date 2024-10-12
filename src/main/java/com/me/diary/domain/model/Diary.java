@@ -5,20 +5,21 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.time.LocalDate;
-import java.util.List;
 
 @Entity(name = "tb_diary")
 public class Diary {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Getter
+    @Setter
     private Long id;
 
     @Getter
     @Setter
     private LocalDate creationDate;
 
-    @OneToMany(cascade = CascadeType.ALL)
+    @OneToOne(cascade = CascadeType.ALL)
     @Getter
     @Setter
-    private List<DiaryEntry> entries;
+    private User user;
 }
